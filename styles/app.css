@@ -49,6 +49,13 @@ button {
     cursor: pointer;
 }
 
+.btn-sm {
+    padding: .5rem .6rem ;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 .btn-primary {
     background-color: var(--primary);
     color: white;
@@ -167,8 +174,9 @@ header .group-items {
 }
 
 .social-links [class^="bi-"] {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
+
 .main-nav .social-links a,
 .main-nav .social-links a:visited {
     color: white;
@@ -384,7 +392,7 @@ progress {
 
 #contact .input-group {
     background-color: rgb(243 242 239);
-    padding: .5rem 0 0 1rem;
+    padding: .5rem .8rem .8rem 1rem;
     margin: 1rem 0;
     box-shadow: 2px 2px 5px var(--light-gray);
     border: 1px solid lightgray;
@@ -440,6 +448,10 @@ footer {
 
 /* Media Queries */
 @media (min-width: 500px) {
+    .social-links [class^="bi-"] {
+        font-size: 2rem;
+    }
+
     .main-nav.show-nav {
         width: 30%;
     }
