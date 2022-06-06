@@ -365,6 +365,11 @@ progress {
 #work {
     min-height: 100vh;
     background-color: var(--bg-info);
+    text-align: center;
+}
+
+#work h1 {
+    margin-bottom: 3rem;
 }
 /* Contact Section 
 ---------------------- */
