@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/najeeb-anwari/portfolio)
-- Live Site URL: [Add live site URL here](https://najeeb-anwari.github.io/portfolio)
+- Source Code: [GitHub URL](https://github.com/najeeb-anwari/portfolio)
+- Live Site URL: [Live View](https://najeeb-anwari.github.io/portfolio)
 
 ## My process
 
