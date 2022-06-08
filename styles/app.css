@@ -384,12 +384,15 @@ progress {
 #work {
     min-height: 100vh;
     background-color: var(--bg-info);
-    text-align: center;
+    display: grid;
+    justify-items: center;
 
 }
 
 #work > .img-container {
+    max-width: 500px;
     margin-bottom: 2rem;
+    
 }
 
 #work a, #work a:visited {
@@ -506,7 +509,7 @@ footer {
     }
 
     .main-nav.show-nav {
-        width: 30%;
+        width: 40%;
     }
 
 }
@@ -514,6 +517,10 @@ footer {
 @media (min-width: 768px) {
     h1 {
         font-size: 5vw;
+    }
+    
+    .main-nav.show-nav {
+        width: 30%;
     }
 
     #intro, 
@@ -564,8 +571,7 @@ footer {
     #about .journey {
         grid-area: journey;
         align-self: stretch;
-        padding-left: 4rem;
-        padding-right: 5rem;
+
     }
 
     .card {
@@ -600,5 +606,14 @@ footer {
     #contact .img-container {
         grid-area: img;
         justify-self: center;
+    }
+}
+
+@media (min-width: 900px) {
+    #about .journey {
+        grid-area: journey;
+        align-self: stretch;
+        padding-left: 4rem;
+        padding-right: 5rem;
     }
 }
