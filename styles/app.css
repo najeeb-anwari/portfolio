@@ -47,6 +47,11 @@ button {
     border-radius: 5px;
     font-size: 1.5rem;
     cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.btn-shaddow {
+    box-shadow: 2px 2px 5px black;
 }
 
 .btn-sm {
@@ -78,6 +83,12 @@ button {
     background-color: var(--dark-blue);
     color: white;
 }
+
+.btn-disabled {
+    background-color: #AAAABC; 
+    color: white;
+}
+
 .progress {
     border: 1px solid var(--light-gray);
     height: 10px;
@@ -374,11 +385,53 @@ progress {
     min-height: 100vh;
     background-color: var(--bg-info);
     text-align: center;
+
+}
+
+#work > .img-container {
+    margin-bottom: 2rem;
+}
+
+#work a, #work a:visited {
+    color: var(--bg-primary);
 }
 
 #work h1 {
     margin-bottom: 3rem;
 }
+.card.project {
+    max-width: 375px;
+}
+
+#work .card.project h2 {
+    margin: 1rem 0;
+}
+
+#work .technologies {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5px;
+    justify-content: center;
+    font-size: .8rem;
+}
+
+#work .technologies span {
+    padding: .2rem .8rem;
+    background-color: var(--dark-blue);
+    color: var(--secondary);
+    border-radius: 5px;
+}
+
+#work .card.project p {
+    text-align: left;
+    margin: 1rem 0;
+
+}
+
+.card.project .actions {
+    text-align: right;
+}
+
 /* Contact Section 
 ---------------------- */
 #contact {
@@ -388,6 +441,7 @@ progress {
 
 #contact h1 {
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 #contact .input-group {
@@ -435,8 +489,7 @@ progress {
 
 .btn-submit {
     margin-left: auto;
-    box-shadow: 2px 2px 5px black;
-    text-transform: uppercase;
+    
 }
 /* Footer Section 
 ---------------------- */
@@ -524,7 +577,28 @@ footer {
         max-width: 450px;   
     }
     
+    #contact {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 45% 50%;
+        grid-template-rows: repeat(auto auto);
+        grid-template-areas: 
+                "heading heading"
+                "card img";
+        gap: 4rem;
+    }
+    
+    #contact h1 {
+        grid-area: heading;
+        text-align: left;
+    }
+    
     #contact .card {
-        max-width: 50%;
+        grid-area: card;
+    }
+
+    #contact .img-container {
+        grid-area: img;
+        justify-self: center;
     }
 }
