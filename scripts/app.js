@@ -22,3 +22,12 @@ menuLinks.addEventListener("click", (e) => {
         mainNav.classList.toggle("show-nav");
     }
 });
+
+const themeBtn = document.querySelector(".theme-btn");
+themeBtn.addEventListener("click", (e) => {
+    document.body.classList.toggle("dark-mode");
+    themeBtn.classList.toggle("btn-dark");
+    themeBtn.querySelector("i").classList.toggle("bi-moon-stars");
+    themeBtn.querySelector("i").classList.toggle("bi-sun");
+    
+});
