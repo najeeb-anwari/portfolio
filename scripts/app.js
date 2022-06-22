@@ -29,5 +29,6 @@ themeBtn.addEventListener("click", (e) => {
     themeBtn.classList.toggle("btn-dark");
     themeBtn.querySelector("i").classList.toggle("bi-moon-stars");
     themeBtn.querySelector("i").classList.toggle("bi-sun");
+    document.querySelector(".logo").classList.toggle("btn-dark");
     
 });

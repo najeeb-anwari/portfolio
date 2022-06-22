@@ -83,6 +83,7 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
+    background-color: hsl(0, 0%, 94%);
 }
 .btn-shaddow {
     box-shadow: 2px 2px 5px black;
@@ -153,12 +154,7 @@ header {
     z-index: 3;
 }
 
-header .logo {
-    padding: .5rem;
-    border-radius: 5px;
-    background-color: var(--dark-blue);
-    color: white;
-}
+
 
 header .group-items {
     color: var(--secondary);
@@ -443,6 +439,7 @@ progress {
 
 #work .card.project h2 {
     margin: 1rem 0;
+    text-align: center;
 }
 
 #work .technologies {
@@ -455,8 +452,8 @@ progress {
 
 #work .technologies span {
     padding: .2rem .8rem;
-    background-color: var(--dark-blue);
-    color: var(--secondary);
+    background-color: var(--primary);
+    color: var(--text-light);
     border-radius: 5px;
 }
 
