@@ -1,7 +1,7 @@
 /* Global Styles
 --------------------- */
 :root {
-    
+    scroll-behavior: smooth;
     --bg-primary: #F5EFE6;
     --bg-secondary: #D2F8ED;
     --bg-info: rgb(243 242 239);
