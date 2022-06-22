@@ -17,7 +17,8 @@
     --bg-info: hsl(45, 14%, 95%);
     --primary: var(--green);
     --secondary: #fbffdc;
-
+    --nav-background: hsla(225, 70%, 12%, .9);
+    --nav-text-color: var(--text-light);
     --text-light: var(--white);
     --text-dark: var(--dark-blue);
     --text-primary: var(--dark-blue);
@@ -35,7 +36,8 @@
     --bg-info: var(--dark-blue);
     --primary: var(--blue);
     --secondary: var(--dark-blue);
-
+    --nav-background: hsla(36, 43%, 93%, .9);
+    --nav-text-color: var(--text-dark);
     --text-primary: var(--blue);
     --text-secondary: var(--white);
     /* Card Colors */
@@ -174,7 +176,7 @@ header .group-items {
     top: 0;
     right: 0;
     z-index: 2;
-    background-color: hsla(225, 70%, 12%, .9);
+    background-color: var(--nav-background);
     transition: .3s;
 }
 
@@ -196,12 +198,12 @@ header .group-items {
     padding: .5rem;
     font-size: 1.5rem;
     text-decoration: none;
-    color: white;
+    color: var(--nav-text-color);
     transition: .3s;
 }
 
 .main-nav a:visited {
-    color: white;
+    color: var(--nav-text-color);
 }
 
 .main-nav li a:hover {
@@ -221,7 +223,7 @@ header .group-items {
 
 .main-nav .social-links a,
 .main-nav .social-links a:visited {
-    color: white;
+    color: var(--nav-text-color);
 }
 /* Sections
 ------------------ */
