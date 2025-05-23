@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="./images/favicon.PNG" type="image/x-icon">
     <link rel="stylesheet" href="./styles/app.css">
+    <link rel="stylesheet" href="./styles/global-overrides.css">
     
     <title>Najeeb Anwari</title>
 </head>
@@ -30,8 +31,9 @@
         <!-- Intro Section Starts -->
         <section id="intro">
             <div class="short-info">
-                <h1>Hi, my <br>name is Najeeb </h1>
+                <h1>Najeeb Anwari: Building Engaging Web Experiences.</h1>
                 <p>I love creating beautiful web applications.</p>
+                <a href="#work" class="btn btn-primary btn-hero">View My Work</a>
             </div>
             <div class="img-container">
                 <img src="./images/undraw_hello_re_3evm.svg" alt="Programmer Image">
@@ -193,9 +195,10 @@
             <div class="img-container">
                 <img src="./images/undraw_programming_re_kg9v.svg" alt="Project Image">
             </div>
-            <article class="card project">
-                <figure class="img-container"> <!-- Replaced div with figure -->
-                    <img src="./images/Projects/Shopping/thumbnail.png" alt="Thumbnail for Shopping Website project">
+            <div class="project-grid"> <!-- New wrapper for project cards -->
+                <article class="card project">
+                    <figure class="img-container"> <!-- Replaced div with figure -->
+                        <img src="./images/Projects/Shopping/thumbnail.png" alt="Thumbnail for Shopping Website project">
                     <!-- No figcaption here as title is separate h2 -->
                 </figure>
                 <h2 class="project-title">Shopping Website</h2>
@@ -217,7 +220,8 @@
                     <!-- <a href="#" class="btn btn-sm btn-disabled" ><code>&lt;/source&gt;</code></a> -->
                     <a href="https://drive.google.com/file/d/1gUtr2RrX0Yz1XpVzGWPQ6xEryD-spOui/view?usp=sharing" target="_blank" class="btn btn-sm btn-shadow btn-primary" aria-label="Preview shopping website project (opens in a new tab)">Preview</a>
                 </div>
-            </article>
+                </article>
+            </div>
         </section>
         <!-- Work Section Ends -->
 

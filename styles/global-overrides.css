@@ -1,0 +1,66 @@
+/* styles/global-overrides.css */
+
+/* 1. Typography & Base Text Color */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #212529; /* Fallback, ideally use var(--text-primary) */
+}
+
+:root {
+    /* Light Mode Color Overrides */
+    --text-primary: #212529; /* Dark gray/off-black for high contrast */
+    --text-secondary: #495057; /* Slightly lighter gray for less emphasis */
+    --bg-primary: #FFFFFF; /* Pure white for a cleaner look */
+    --primary: hsl(212, 100%, 50%); /* Accent blue */
+
+    /* These might be needed if cards/buttons use them directly */
+    --white: #FFFFFF;
+    --dark-blue: hsl(225, 70%, 12%); /* Retaining for now if used by nav */
+    --blue: hsl(212, 100%, 50%);
+}
+
+.dark-mode {
+    /* Dark Mode Color Overrides */
+    --text-primary: #E0E0E0; /* Light gray for text */
+    --text-secondary: #B0B0B0; /* Slightly darker light gray */
+    --bg-primary: #121212; /* Standard dark background */
+    --primary: hsl(212, 100%, 60%); /* Slightly brighter blue for dark mode */
+    --card-bg: #1E1E1E; /* Cards slightly lighter than main dark bg */
+}
+
+/* Apply the new text primary to body in dark mode */
+.dark-mode body {
+    color: var(--text-primary);
+}
+
+/* Headings */
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary); /* Use secondary for paragraphs for softer look */
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}

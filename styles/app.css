@@ -3,6 +3,8 @@
 :root {
     /* Smooth scrolling behavior */
     scroll-behavior: smooth;
+    /* Offset for fixed header to prevent content from being hidden after scrolling */
+    scroll-padding-top: 4rem; /* Adjust this value based on actual header height */
 
     /* Color Palette */
     --green: hsl(104, 80%, 29%);
@@ -29,9 +31,9 @@
 
     /* Text Colors */
     --text-light: var(--white);
-    --text-dark: var(--dark-blue);
-    --text-primary: var(--dark-blue);
-    --text-secondary: var(--dark-blue);
+    --text-dark: var(--dark-blue); /* This might become #212529 or a darker shade in dark mode */
+    --text-primary: #212529; /* New primary text color for light mode */
+    --text-secondary: #495057; /* New secondary text color for light mode */
 
     /* Card Specific Colors */
     --card-bg: var(--white);
@@ -95,7 +97,10 @@ h2 {
 body {
     font-size: 16px; /* Default font size */
     font-family: 'Poppins', sans-serif; /* Default font family */
-    transition: all .5s; /* Smooth transition for theme changes */
+    line-height: 1.7; /* New line height */
+    color: var(--text-primary); /* Use updated primary text color */
+    /* More specific transition for theme changes to avoid potential conflicts */
+    transition: background-color .5s, color .5s; 
 }
 
 /* Button base styles */
@@ -298,33 +303,48 @@ header .group-items {
 /* Intro Section (#intro)
 --------------------------- */
 #intro {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically by default */
-    background-color: var(--secondary); /* Use secondary background color */
-    min-height: 100vh; /* Full viewport height */
-    padding: 5rem 2rem; /* Padding from general section styles */
-    gap: 2rem; /* Spacing between elements */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    text-align: center; /* Center text within child elements */
+    background-color: var(--secondary); 
+    min-height: 100vh; 
+    padding: 6rem 2rem; /* Adjusted padding */
+    gap: 2rem; /* Maintain gap for spacing between direct children if needed, or use margins */
 }
 
 /* Short informational text in the intro */
 .short-info {
-    margin-bottom: 2rem; /* Space below the short info */
+    /* text-align: center; will be inherited */
+    /* Spacing is handled by parent #intro's gap property */
 }
 
 /* Image container within the intro section */
-#intro .img-container img {
-    align-self: start; /* Align image to the start (relevant in flex context) */
+#intro .img-container { /* Changed from #intro .img-container img to target container */
+    /* margin-top is removed to rely on parent #intro's gap property for spacing */
 }
 
 /* Heading within the intro's short info */
 #intro .short-info h1 {
-    color: var(--primary); /* Use primary color for heading */
+    color: var(--primary); 
+    font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive font size */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
 }
 
 /* Paragraph text within the intro's short info */
 #intro .short-info p {
-    font-size: .7rem; /* Smaller font size for intro paragraph */
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive font size */
     color: var(--text-primary);
+    margin-bottom: 2rem; /* Space before the CTA button */
+}
+
+/* Hero Call-to-Action Button Style */
+.btn-hero {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem; /* Slightly larger for emphasis */
+    /* margin-top: 2rem; /* This will be handled by p's margin-bottom */
 }
 
 /* About Section (#about)
@@ -502,15 +522,16 @@ progress { /* Note: This styles all progress elements, might need more specifici
     background-color: var(--bg-info); /* Informational background color */
     display: grid;
     justify-items: center; /* Center items horizontally */
+    /* padding: 6rem 2rem; /* Consistent with hero, if desired, or use default section padding */
 }
 
-/* Image container within the work section */
+/* Image container within the work section (decorative image above projects) */
 #work > .img-container { /* Direct child selector for specificity */
     max-width: 500px; /* Max width for the image container */
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* Increased margin to space it from the project grid */
 }
 
-/* Links within the work section */
+/* Links within the work section - general links if any, buttons are styled separately */
 #work a, #work a:visited {
     color: var(--primary); /* Use primary color for links in this section for better visibility */
 }
@@ -520,12 +541,42 @@ progress { /* Note: This styles all progress elements, might need more specifici
     margin-bottom: 3rem;
 }
 
-/* Project card styling */
-.card.project { /* Specific styling for project cards */
-    max-width: 375px; /* Max width for project cards */
+/* Project grid layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Spacing between cards */
+    width: 100%;
+    max-width: 1200px; /* Optional: to constrain max width of grid */
+    margin: 0 auto; /* Center the grid if max-width is used */
 }
 
-#work .card.project h2 {
+/* Project card styling */
+.card.project { 
+    /* max-width is removed to allow grid to control size */
+    display: flex; /* For internal layout control */
+    flex-direction: column;
+    justify-content: space-between; /* Pushes actions to the bottom if card heights vary */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Base transition for hover */
+    margin: 0; /* Override default .card margin, grid gap will handle spacing */
+}
+
+.card.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1); /* Enhanced shadow on hover */
+}
+
+/* Styling for images within project cards specifically */
+#work .card.project .img-container img {
+    width: 100%;
+    /* height: auto; /* Let aspect-ratio define height */
+    object-fit: cover; /* Cover the area, may crop */
+    aspect-ratio: 16/9; /* Maintain a 16:9 aspect ratio */
+    border-radius: 5px 5px 0 0; /* Optional: round top corners if image is flush */
+}
+
+
+#work .card.project h2 { /* Project title */
     margin: 1rem 0;
     text-align: center;
 }
@@ -537,6 +588,7 @@ progress { /* Note: This styles all progress elements, might need more specifici
     gap: 5px; /* Spacing between technology tags */
     justify-content: center;
     font-size: .8rem; /* Smaller font for tech tags */
+    margin: 1rem 0; /* Add some margin around the tech tags block */
 }
 
 #work .technologies span {
@@ -550,11 +602,13 @@ progress { /* Note: This styles all progress elements, might need more specifici
 #work .card.project p {
     text-align: left; /* Align description text to the left */
     margin: 1rem 0;
+    flex-grow: 1; /* Allow description to take available space */
 }
 
 /* Action buttons container in project card */
 .card.project .actions {
     text-align: right; /* Align buttons to the right */
+    margin-top: 1rem; /* Space above action buttons */
 }
 
 /* Contact Section (#contact)
@@ -728,9 +782,10 @@ footer {
     }
 
     /* Add bottom margin for project cards in #work section on larger screens, if they are stacked */
-    #work .card.project:not(:last-child) {
+    /* This rule is no longer needed as .project-grid gap handles spacing and .card.project has margin:0 now */
+    /* #work .card.project:not(:last-child) {
         margin-bottom: 2rem; 
-    }
+    } */
     
     /* Layout adjustments for #contact section */
     #contact {
@@ -768,4 +823,11 @@ footer {
         padding-left: 4rem; /* Add more horizontal padding */
         padding-right: 5rem;
     }
+}
+
+/* Accessibility: Respect user's preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto; /* Disable smooth scrolling if user prefers reduced motion */
+  }
 }
