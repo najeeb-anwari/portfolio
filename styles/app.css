@@ -1,8 +1,10 @@
 /* Global Styles
 --------------------- */
 :root {
+    /* Smooth scrolling behavior */
     scroll-behavior: smooth;
-    /* Colors */
+
+    /* Color Palette */
     --green: hsl(104, 80%, 29%);
     --light-gray: hsl(240, 12%, 70%);
     --dark-gray: hsl(240, 10%, 30%);
@@ -12,53 +14,76 @@
     --yellow: hsl(51, 100%, 50%);
     --yellow-70: hsl(51, 100%, 70%);
 
+    /* Background Colors */
     --bg-primary: #F5EFE6;
     --bg-secondary: #D2F8ED;
     --bg-info: hsl(45, 14%, 95%);
+
+    /* Primary and Secondary Colors */
     --primary: var(--green);
     --secondary: #fbffdc;
+
+    /* Navigation Colors */
     --nav-background: hsla(225, 70%, 12%, .9);
     --nav-text-color: var(--text-light);
+
+    /* Text Colors */
     --text-light: var(--white);
     --text-dark: var(--dark-blue);
     --text-primary: var(--dark-blue);
     --text-secondary: var(--dark-blue);
 
-    /* Card Colors */
+    /* Card Specific Colors */
     --card-bg: var(--white);
+
     /* Shadows */
     --card-shadow: 0px 0px 5px var(--light-gray);
 }
 
+/* Dark Mode Color Overrides */
 .dark-mode {
+    /* Background Colors */
     --bg-primary: #022C43;
     --bg-secondary: var(--dark-blue);
     --bg-info: var(--dark-blue);
+
+    /* Primary and Secondary Colors */
     --primary: var(--blue);
     --secondary: var(--dark-blue);
+
+    /* Navigation Colors */
     --nav-background: hsla(36, 43%, 93%, .9);
     --nav-text-color: var(--text-dark);
+
+    /* Text Colors */
     --text-primary: var(--blue);
     --text-secondary: var(--white);
-    /* Card Colors */
+
+    /* Card Specific Colors */
     --card-bg: var(--dark-blue);
+
     /* Shadows */
     --card-shadow: 2px 2px 5px 2px black;
-
 }
 
+/* General Reset and Base Styles
+------------------------------------ */
+
+/* Universal box-sizing reset */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/* Remove default list styling */
 ul {
     list-style: none;
 }
 
+/* Heading styles */
 h1 {
-    font-size: 2rem;
+    font-size: 2rem; /* Default font size for h1 */
     color: var(--text-primary);
 }
 
@@ -66,18 +91,22 @@ h2 {
     color: var(--text-secondary);
 }
 
+/* Body base styles */
 body {
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    transition: all .5s;
-
+    font-size: 16px; /* Default font size */
+    font-family: 'Poppins', sans-serif; /* Default font family */
+    transition: all .5s; /* Smooth transition for theme changes */
 }
 
-
+/* Button base styles */
 button {
-    border: none;
+    border: none; /* Remove default button border */
 }
 
+/* Utility Button Styles
+-------------------------- */
+
+/* Base button style */
 .btn {
     padding: .5rem .6rem ;
     border-radius: 5px;
@@ -85,12 +114,15 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
-    background-color: hsl(0, 0%, 94%);
+    background-color: hsl(0, 0%, 94%); /* Default background */
 }
-.btn-shaddow {
+
+/* Button shadow */
+.btn-shadow { /* Renamed for consistency */
     box-shadow: 2px 2px 5px black;
 }
 
+/* Small button variant */
 .btn-sm {
     padding: .5rem .6rem ;
     border-radius: 5px;
@@ -98,19 +130,22 @@ button {
     cursor: pointer;
 }
 
+/* Primary button variant */
 .btn-primary {
     background-color: var(--primary);
     color: white;
 }
 
+/* Dark button variant */
 .btn-dark {
     background-color: var(--dark-blue);
     color: var(--text-light);
 }
 
+/* Dark outline button variant */
 .btn-dark-outline {
     background-color: transparent;
-    padding: calc(.5rem - 3px) calc(.6rem - 3px);
+    padding: calc(.5rem - 3px) calc(.6rem - 3px); /* Adjust padding to account for border */
     border: 3px solid var(--dark-blue);
     color: var(--yellow);
 }
@@ -120,172 +155,201 @@ button {
     color: white;
 }
 
+/* Disabled button state */
 .btn-disabled {
     background-color: #AAAABC; 
     color: white;
+    cursor: not-allowed; /* Indicate non-interactive state */
 }
 
+/* Progress Bar Styles
+----------------------- */
 .progress {
     border: 1px solid var(--light-gray);
     height: 10px;
 }
 
 .progress-bar {
-    background-color: #ffc107;
+    background-color: #ffc107; /* Yellow progress indicator */
     height: 10px;
 }
 
+/* Card Component Styles
+------------------------- */
 .card {
     box-shadow: var(--card-shadow);
     padding: 2rem;
     background-color: var(--card-bg);
     color: var(--text-secondary);
     margin: 3rem 0;
-    color: var(--text-secondary);
 }
 
 
 /* Header Section
 --------------------- */
 header {
-    position: fixed;
+    position: fixed; /* Keep header at the top */
     display: flex;
     padding: 1rem;  
-    justify-content: space-between;
+    justify-content: space-between; /* Space out logo/title and nav toggle */
     width: 100%;
-    z-index: 3;
+    z-index: 3; /* Ensure header is above other content */
 }
 
-
-
+/* Group items within the header (e.g., logo and theme toggle) */
 header .group-items {
-    color: var(--secondary);
+    color: var(--secondary); /* Text color for items */
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1rem; /* Spacing between items */
 }
-/* Navication */
+
+/* Navigation Menu Styles
+-------------------------- */
 .main-nav {
-    /* display: none; */
-    position: fixed;
-    height: 100%;
-    width: 0%;
-    overflow: hidden;
-    
-    padding-top: 5rem;
+    position: fixed; /* Fixed position for overlay menu */
+    height: 100%; /* Full height */
+    width: 0%; /* Initially hidden, expanded by JS */
+    overflow: hidden; /* Hide content when collapsed */
+    padding-top: 5rem; /* Space for header */
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 2; /* Below header but above page content */
     background-color: var(--nav-background);
-    transition: .3s;
+    transition: width .3s; /* Smooth transition for opening/closing */
 }
 
+/* Class to show the navigation menu */
 .main-nav.show-nav {
-    width: 100%;
+    width: 100%; /* Full width when shown on small screens */
 }
 
+/* Navigation list */
 .main-nav ul {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-    padding-left: 4rem;
-    border-bottom: 1px solid var(--light-gray);
+    gap: .5rem; /* Spacing between nav items */
+    padding-left: 4rem; /* Indentation for nav items */
+    border-bottom: 1px solid var(--light-gray); /* Separator line */
     padding-bottom: 2rem;
 }
 
+/* Navigation links */
 .main-nav li a {
     display: inline-block;
     padding: .5rem;
     font-size: 1.5rem;
     text-decoration: none;
     color: var(--nav-text-color);
-    transition: .3s;
+    transition: color .3s; /* Smooth transition for hover effect */
 }
 
+/* Visited navigation links (ensure they match normal state) */
 .main-nav a:visited {
     color: var(--nav-text-color);
 }
 
+/* Navigation link hover effect */
 .main-nav li a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
+/* Social links within navigation */
 .main-nav .social-links {
-    height: 100px;
+    height: 100px; /* Fixed height for social links container */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around; /* Distribute social icons evenly */
 }
 
+/* General style for social icons (Bootstrap Icons) */
 .social-links [class^="bi-"] {
     font-size: 1.5rem;
 }
 
+/* Social links in navigation (normal and visited states) */
 .main-nav .social-links a,
 .main-nav .social-links a:visited {
     color: var(--nav-text-color);
+    transition: opacity 0.2s ease-in-out; /* Smooth transition for opacity */
 }
-/* Sections
------------------- */
+
+.main-nav .social-links a:hover,
+.main-nav .social-links a:focus {
+    opacity: 0.7; /* Reduce opacity on hover/focus */
+}
+
+/* General Section Styling
+-------------------------- */
+
+/* Default padding for main content sections */
 #about, 
 #work, 
 #contact {
-    padding: 5rem 2rem;
+    padding: 5rem 2rem; /* Top/bottom and left/right padding */
 }
 
+/* Responsive images within containers */
 .img-container img {
-    max-width: 100%;
+    max-width: 100%; /* Ensure images don't overflow their container */
+    height: auto; /* Maintain aspect ratio */
 }
 
-/* Intro Section
----------------------- */
+/* Intro Section (#intro)
+--------------------------- */
 #intro {
     display: flex;
-    flex-direction: column;
-    background-color: var(--secondary);
-    min-height: 100vh;
-    padding: 5rem 2rem;
-    gap: 2rem;
+    flex-direction: column; /* Stack elements vertically by default */
+    background-color: var(--secondary); /* Use secondary background color */
+    min-height: 100vh; /* Full viewport height */
+    padding: 5rem 2rem; /* Padding from general section styles */
+    gap: 2rem; /* Spacing between elements */
 }
 
+/* Short informational text in the intro */
 .short-info {
-
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; /* Space below the short info */
 }
 
+/* Image container within the intro section */
 #intro .img-container img {
-    align-self: start;
+    align-self: start; /* Align image to the start (relevant in flex context) */
 }
 
+/* Heading within the intro's short info */
 #intro .short-info h1 {
-    color: var(--primary);
+    color: var(--primary); /* Use primary color for heading */
 }
 
+/* Paragraph text within the intro's short info */
 #intro .short-info p {
-    font-size: .7rem;
+    font-size: .7rem; /* Smaller font size for intro paragraph */
     color: var(--text-primary);
 }
-/* About Section
---------------------- */
+
+/* About Section (#about)
+------------------------- */
 #about {
-    display: grid;
-    min-height: 100vh;
-    background-color: var(--bg-primary);
-    position: relative;
-    justify-items: center;
-
+    display: grid; /* Use CSS Grid for layout */
+    min-height: 100vh; /* Full viewport height */
+    background-color: var(--bg-primary); /* Primary background color */
+    position: relative; /* For potential absolute positioning of children */
+    justify-items: center; /* Center items horizontally */
 }
 
+/* Heading within the about section */
 #about h1 {
-    margin-bottom: 3rem;    
+    margin-bottom: 3rem; /* Space below the heading */
 }
 
+/* Image container within the about section */
 #about .img-container {
-    margin-bottom: 3rem;
+    margin-bottom: 3rem; /* Space below the image */
 }
-/* Skills informaiton */
+
+/* Card for skills information in the about section */
 #about .card-info {
-    width: 100%;
+    width: 100%; /* Full width of its grid area */
     box-shadow: var(--card-shadow);
     background-color: var(--card-bg);
     display: flex;
@@ -293,6 +357,7 @@ header .group-items {
     color: var(--text-secondary);
 }
 
+/* Author information block */
 .author {
     padding: 2rem;
     text-align: center;
@@ -304,31 +369,32 @@ header .group-items {
 }
 
 .author-position {
-    color: var(--dark-gray);
-
+    color: var(--dark-gray); /* Specific color for author's position */
 }
 
+/* Profile image styling */
 .profile-img {
     text-align: center;
 }
 
 .profile-img img {
-    border-radius: 50%;
-    width: 120px;
-    padding: 5px;
-    box-shadow: 0px 0px 2px 0px var(--dark-blue) inset ,
+    border-radius: 50%; /* Circular profile image */
+    width: 120px; /* Fixed width */
+    padding: 5px; /* Padding around the image */
+    box-shadow: 0px 0px 2px 0px var(--dark-blue) inset, /* Inner and outer shadow */
                 0px 0px 5px 0px var(--dark-blue);
 }
 
+/* Author details container (skills, languages, etc.) */
 .author-details {
-    padding: 2rem 2rem;
-    box-shadow: 0px 0px 15px -3px var(--dark-blue) inset;
-    flex-grow: 1;
-    height: 60vh;
-    overflow: auto;
-    
+    padding: 2rem;
+    box-shadow: 0px 0px 15px -3px var(--dark-blue) inset; /* Inner shadow for depth */
+    flex-grow: 1; /* Allow this section to grow if space is available */
+    height: 60vh; /* Fixed height with scrolling */
+    overflow: auto; /* Enable scrolling for overflow content */
 }
 
+/* Table styling within author details */
 .author-details table {
     width: 100%;
     margin-bottom: 1rem;
@@ -336,56 +402,68 @@ header .group-items {
 
 .author-details table tr {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space out table cells */
 }
 
 .author-details table td {
-    text-align: left;
+    text-align: left; /* Align text to the left in table cells */
 }
 
+/* Headings within author details */
 .author-details h2 {
-    padding: 1rem 0;
+    padding: 1rem 0; /* Padding around headings */
 }
 
+/* Languages skills section */
 .languages {
     display: grid;
-    gap: 1rem;
+    gap: 1rem; /* Spacing between language entries */
     margin-bottom: 1rem;
 }
 
+/* Individual language entry */
 .language {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns for name and percentage */
 }
 
 .language .percentage {
-    justify-self: end;
+    justify-self: end; /* Align percentage to the right */
 }
 
-progress {
-    grid-column: 1 / 3;
+/* Progress bar for language proficiency */
+progress { /* Note: This styles all progress elements, might need more specificity */
+    grid-column: 1 / 3; /* Span both columns */
     width: 100%;
 }
 
+/* Knowledge/other skills list */
 .knowledge {
     margin-bottom: 1rem;
 }
 
 .knowledge li {
     font-weight: 500;
-    list-style-type: square;
-    margin-left: 1rem;
+    list-style-type: square; /* Use square bullets */
+    margin-left: 1rem; /* Indent list items */
 }
 
-/* CV */
+/* CV download link style */
 #cv {
     display: inline-block;
     padding: 1rem 0;
     text-transform: uppercase;    
     color: var(--text-primary);
+    text-decoration: none; /* Remove default underline */
+    transition: text-decoration 0.2s ease-in-out; /* Smooth transition for underline */
 }
 
-/* Author Social Links */
+#cv:hover,
+#cv:focus {
+    text-decoration: underline; /* Add underline on hover/focus */
+}
+
+/* Author's social media links in about section */
 .author-social-links {
     height: 100px;
     display: flex;
@@ -394,49 +472,57 @@ progress {
 }
 
 .author-social-links [class^="bi-"] {
-    font-size: 2rem;
+    font-size: 2rem; /* Larger icons for author social links */
 }
 
 .author-social-links a,
 .author-social-links a:visited {
     color: var(--text-secondary);
+    transition: opacity 0.2s ease-in-out; /* Smooth transition for opacity */
 }
-/* Journey */
+
+.author-social-links a:hover,
+.author-social-links a:focus {
+    opacity: 0.7; /* Reduce opacity on hover/focus */
+}
+
+/* Journey/Experience section */
 .journey h2 {
     text-align: center;
-    margin: 2rem 0;
+    margin: 2rem 0; /* Space around the heading */
 }
 .journey p {
-    padding: 1rem 0;
-    /* text-indent: 2rem; */
+    padding: 1rem 0; /* Padding for paragraphs */
 }
 
-
-/* Work Section
---------------------- */
+/* Work Section (#work)
+----------------------- */
 #work {
-    min-height: 100vh;
-    background-color: var(--bg-info);
+    min-height: 100vh; /* Full viewport height */
+    background-color: var(--bg-info); /* Informational background color */
     display: grid;
-    justify-items: center;
-
+    justify-items: center; /* Center items horizontally */
 }
 
-#work > .img-container {
-    max-width: 500px;
+/* Image container within the work section */
+#work > .img-container { /* Direct child selector for specificity */
+    max-width: 500px; /* Max width for the image container */
     margin-bottom: 2rem;
-    
 }
 
+/* Links within the work section */
 #work a, #work a:visited {
-    color: var(--bg-primary);
+    color: var(--primary); /* Use primary color for links in this section for better visibility */
 }
 
+/* Heading within the work section */
 #work h1 {
     margin-bottom: 3rem;
 }
-.card.project {
-    max-width: 375px;
+
+/* Project card styling */
+.card.project { /* Specific styling for project cards */
+    max-width: 375px; /* Max width for project cards */
 }
 
 #work .card.project h2 {
@@ -444,210 +530,242 @@ progress {
     text-align: center;
 }
 
+/* Technologies used in a project */
 #work .technologies {
     display: flex;
-    flex-flow: row wrap;
-    gap: 5px;
+    flex-flow: row wrap; /* Allow technologies to wrap */
+    gap: 5px; /* Spacing between technology tags */
     justify-content: center;
-    font-size: .8rem;
+    font-size: .8rem; /* Smaller font for tech tags */
 }
 
 #work .technologies span {
     padding: .2rem .8rem;
     background-color: var(--primary);
     color: var(--text-light);
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners for tags */
 }
 
+/* Project description paragraph */
 #work .card.project p {
-    text-align: left;
+    text-align: left; /* Align description text to the left */
     margin: 1rem 0;
-
 }
 
+/* Action buttons container in project card */
 .card.project .actions {
-    text-align: right;
+    text-align: right; /* Align buttons to the right */
 }
 
-/* Contact Section 
----------------------- */
+/* Contact Section (#contact)
+--------------------------- */
 #contact {
-    background-color: var(--bg-secondary);
-    min-height: 100vh;
+    background-color: var(--bg-secondary); /* Secondary background color */
+    min-height: 100vh; /* Full viewport height */
 }
 
+/* Heading within the contact section */
 #contact h1 {
     margin-bottom: 2rem;
     text-align: center;
 }
 
+/* Input group styling for form elements */
 #contact .input-group {
-    background-color: rgb(243 242 239);
+    background-color: rgb(243 242 239); /* Light background for input groups */
     padding: .5rem .8rem .8rem 1rem;
-    margin: 1rem 0;
+    margin: 1rem 0; /* Space around input groups */
     box-shadow: 2px 2px 5px var(--light-gray);
-    border: 1px solid lightgray;
+    border: 1px solid lightgray; /* Subtle border */
 }
 
+/* Label styling within input groups */
 #contact .input-group label {
     display: flex;
-    flex-direction: column;
-    font-size: .8rem;
+    flex-direction: column; /* Stack label text and input */
+    font-size: .8rem; /* Smaller font for labels */
 }
+
+/* Hint text (placeholder-like) within labels */
 #contact .input-group label span {
-    color: var(--light-gray);
+    color: var(--light-gray); /* Lighter color for hint text */
 }
+
+/* Input and textarea styling */
 #contact .input-group input,
 #contact .input-group textarea {
     padding: .5rem 0;
     border-radius: 5px;
-    background-color: transparent;
-    border: none;
-    font-size: 1.3rem;
-    ;
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border by default */
+    font-size: 1.3rem; /* Larger font for input text */
 }
 
+/* Remove outline on focus for inputs and textareas */
 #contact .input-group input:focus, 
 #contact .input-group textarea:focus {
     outline: none;
 }
 
+/* Social links within the contact section */
 #contact .social-links {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    
+    gap: 1rem; /* Spacing between social links */
 }
 
-.social-links a,
+/* General social link styling (also used in nav, but might need specific override) */
+/* This rule for .social-links a, .social-links a:visited is broad. 
+   It was already defined earlier. If specific colors are needed here, 
+   they should be more specific like #contact .social-links a */
+.social-links a, /* Assuming this is for contact section, if not, needs more specificity */
 .social-links a:visited {
-    color: var(--dark-blue);
+    color: var(--dark-blue); /* Dark blue for contact social links */
+    transition: opacity 0.2s ease-in-out; /* Smooth transition for opacity */
 }
 
+.social-links a:hover,
+.social-links a:focus {
+    opacity: 0.7; /* Reduce opacity on hover/focus */
+}
+
+/* Submit button alignment */
 .btn-submit {
-    margin-left: auto;
-    
+    margin-left: auto; /* Push submit button to the right in a flex container */
 }
 /* Footer Section 
 ---------------------- */
-
 footer {
-    padding: 2rem;
-    text-align: center;
+    padding: 2rem; /* Padding around footer content */
+    text-align: center; /* Center-align footer text */
 }
 
-/* Media Queries */
+/* Media Queries
+------------------ */
+
+/* Small devices (tablets, 500px and up) */
 @media (min-width: 500px) {
-    .social-links [class^="bi-"] {
+    /* Increase icon size for social links */
+    .social-links [class^="bi-"] { /* This selector might be too general if .social-links is used elsewhere with different icon sizes */
         font-size: 2rem;
     }
 
+    /* Adjust width of the shown navigation menu */
     .main-nav.show-nav {
-        width: 40%;
+        width: 40%; /* Wider navigation panel */
     }
-
 }
 
+/* Medium devices (desktops, 768px and up) */
 @media (min-width: 768px) {
+    /* Responsive font size for h1 */
     h1 {
-        font-size: 5vw;
+        font-size: 5vw; /* Adjust font size based on viewport width */
     }
     
+    /* Further adjust width of the shown navigation menu */
     .main-nav.show-nav {
-        width: 30%;
+        width: 30%; /* Narrower navigation panel for larger screens */
     }
 
+    /* Standardized padding for sections on larger screens */
     #intro, 
     #about, 
     #work, 
-    #contact {
-        padding: 5rem 2rem;
+    #contact { /* Ensure this padding is desired, it overrides the mobile first padding */
+        padding: 5rem 2rem; /* Consistent padding */
     }
 
+    /* Layout adjustments for #intro section */
     #intro {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout */
     }
 
     #intro .short-info p {
-        font-size: 1rem;
+        font-size: 1rem; /* Increase paragraph font size */
     }
 
-
-
+    /* Layout adjustments for #about section */
     #about {
-        grid-template-columns: calc(375px - 4rem) 1fr;
-        
+        grid-template-columns: calc(375px - 4rem) 1fr; /* Define column sizes */
         grid-template-areas: 
                 "heading heading"
                 "info image"
-                "info journey";
-        align-items: start;
-        column-gap: 4rem;
+                "info journey"; /* Define grid areas for complex layout */
+        align-items: start; /* Align grid items to the start */
+        column-gap: 4rem; /* Gap between columns */
     }
 
     #about h1{
-        grid-area: heading;
+        grid-area: heading; /* Assign to 'heading' grid area */
         margin-bottom: 4rem;
-        justify-self: start;
-        
+        justify-self: start; /* Align heading to the start of its area */
     }
 
     #about .card-info {
-        grid-area: info;
-        align-self: stretch;
+        grid-area: info; /* Assign to 'info' grid area */
+        align-self: stretch; /* Stretch to fill the grid area height */
     }
+
     .author-details {
-        height: auto;
+        height: auto; /* Allow author details to grow naturally */
     }
 
     #about .journey {
-        grid-area: journey;
-        align-self: stretch;
-
+        grid-area: journey; /* Assign to 'journey' grid area */
+        align-self: stretch; /* Stretch to fill the grid area height */
     }
 
-    .card {
-        margin: 0;
+    /* Adjust card margin for desktop layout */
+    .card { /* This is a general card adjustment, ensure it's intended for all cards at this breakpoint */
+        margin: 0; /* Remove bottom margin often used for stacking on mobile */
     }
 
     #about .img-container {
-        grid-area: image;
+        grid-area: image; /* Assign to 'image' grid area */
         max-width: 450px;   
     }
+
+    /* Add bottom margin for project cards in #work section on larger screens, if they are stacked */
+    #work .card.project:not(:last-child) {
+        margin-bottom: 2rem; 
+    }
     
+    /* Layout adjustments for #contact section */
     #contact {
-        width: 100%;
+        width: 100%; /* Full width */
         display: grid;
-        grid-template-columns: 45% 50%;
-        grid-template-rows: repeat(auto auto);
+        grid-template-columns: 45% 50%; /* Define column sizes */
+        grid-template-rows: repeat(auto auto); /* Define row behavior */
         grid-template-areas: 
                 "heading heading"
-                "card img";
-        gap: 4rem;
+                "card img"; /* Define grid areas */
+        gap: 4rem; /* Gap between grid items */
     }
     
     #contact h1 {
-        grid-area: heading;
-        text-align: left;
+        grid-area: heading; /* Assign to 'heading' grid area */
+        text-align: left; /* Align heading to the left */
     }
     
     #contact .card {
-        grid-area: card;
+        grid-area: card; /* Assign to 'card' grid area */
     }
 
     #contact .img-container {
-        grid-area: img;
-        justify-self: center;
+        grid-area: img; /* Assign to 'img' grid area */
+        justify-self: center; /* Center image container in its area */
     }
 }
 
+/* Large devices (large desktops, 900px and up) */
 @media (min-width: 900px) {
+    /* Specific padding adjustments for #about .journey on large screens */
     #about .journey {
-        grid-area: journey;
-        align-self: stretch;
-        padding-left: 4rem;
+        /* grid-area: journey; already defined */
+        /* align-self: stretch; already defined */
+        padding-left: 4rem; /* Add more horizontal padding */
         padding-right: 5rem;
     }
 }

@@ -18,8 +18,8 @@
     <header>
         <div class="logo btn btn-dark btn-sm "><code>&lt;/&gt;</code></div>
         <div class="group-items">
-            <button class="theme-btn btn btn-dark"><i class="bi-moon-stars"></i></button>
-            <button class="menu-btn btn btn-primary"><i class="bi-list"></i></button>
+            <button class="theme-btn btn btn-dark" aria-label="Toggle theme"><i class="bi-moon-stars"></i></button>
+            <button class="menu-btn btn btn-primary" aria-label="Open menu" aria-controls="main-navigation" aria-expanded="false"><i class="bi-list"></i></button>
         </div>
         
     </header>
@@ -47,19 +47,19 @@
                 <img src="./images/undraw_profile_re_4a55.svg" alt="Programmer Image">
             </div>
 
-            <div class="card-info">
+            <article class="card-info">
 
-                <div class="author">
-                    <div class="profile-img">
+                <figure class="author">
+                    <div class="profile-img"> <!-- This div might be redundant if figure directly styles the img -->
                         <img src="./images/profile-picture.jpg" alt="Abdul Najeeb Anwari's Profile Picture">
                     </div>
-                    <h2 class="author-name">
+                    <figcaption class="author-name"> <!-- Changed h2 to figcaption for semantic association -->
                         Abdul Najeeb<br> Anwari
-                    </h2>
-                    <div class="author-position">
+                    </figcaption>
+                    <div class="author-position"> <!-- This could also be part of figcaption or remain as is -->
                         Web Developer
                     </div>
-                </div>
+                </figure>
                 
                 <div class="author-details">
                     <table>
@@ -142,16 +142,16 @@
                         <li>MySQL/SQL SERVER</li>
                     </ul>
                     <hr>
-                    <a id="cv" href="https://drive.google.com/file/d/1UJ2YGzxkb5bY0kwJTcGUl5Oh3HgBfB-U/view?usp=sharing" target="_blank">Download CV</a>
+                    <a id="cv" href="https://drive.google.com/file/d/1UJ2YGzxkb5bY0kwJTcGUl5Oh3HgBfB-U/view?usp=sharing" target="_blank" aria-label="Download CV (opens in a new tab)">Download CV</a>
                 </div>
                 <div class="author-social-links">
-                    <a href="https://github.com/najeeb-anwari" target="_blank"><i class="bi-github"></i></a>
-                    <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank"><i class="bi-linkedin"></i></a>
-                    <a href="https://twitter.com/najeeb_anwari" target="_blank"><i class="bi-twitter"></i></a>
+                    <a href="https://github.com/najeeb-anwari" target="_blank" aria-label="Najeeb Anwari's GitHub profile (opens in a new tab)"><i class="bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank" aria-label="Najeeb Anwari's LinkedIn profile (opens in a new tab)"><i class="bi-linkedin"></i></a>
+                    <a href="https://twitter.com/najeeb_anwari" target="_blank" aria-label="Najeeb Anwari's Twitter profile (opens in a new tab)"><i class="bi-twitter"></i></a>
                 </div>
 
-            </div>
-            <div class="card journey">
+            </article>
+            <article class="card journey">
                 <h2>My Journey</h2>
                 <p>
                     From my childhood I loved computers. The computer was like candy to a child to me. I was always looking at my eldest brother's desktop computer. 
@@ -182,7 +182,7 @@
                     She helped me to work on my CV and my LinkedIn profile. She is an outstanding coach and very friendly and inspiring.
                     Her advice inspired me to become more active and work on my self-improvement.   
                 </p>
-            </div>
+            </article>
 
         </section>
         <!-- About Section Ends -->
@@ -193,10 +193,11 @@
             <div class="img-container">
                 <img src="./images/undraw_programming_re_kg9v.svg" alt="Project Image">
             </div>
-            <div class="card project">
-                <div class="img-container">
-                    <img src="./images/Projects/Shopping/thumbnail.png" alt="Project Image">
-                </div>
+            <article class="card project">
+                <figure class="img-container"> <!-- Replaced div with figure -->
+                    <img src="./images/Projects/Shopping/thumbnail.png" alt="Thumbnail for Shopping Website project">
+                    <!-- No figcaption here as title is separate h2 -->
+                </figure>
                 <h2 class="project-title">Shopping Website</h2>
                 <div class="technologies">
                     <span>HTML</span>
@@ -214,9 +215,9 @@
 
                 <div class="actions">
                     <!-- <a href="#" class="btn btn-sm btn-disabled" ><code>&lt;/source&gt;</code></a> -->
-                    <a href="https://drive.google.com/file/d/1gUtr2RrX0Yz1XpVzGWPQ6xEryD-spOui/view?usp=sharing" target="_blank" class="btn btn-sm btn-shaddow btn-primary">Preview</a>
+                    <a href="https://drive.google.com/file/d/1gUtr2RrX0Yz1XpVzGWPQ6xEryD-spOui/view?usp=sharing" target="_blank" class="btn btn-sm btn-shadow btn-primary" aria-label="Preview shopping website project (opens in a new tab)">Preview</a>
                 </div>
-            </div>
+            </article>
         </section>
         <!-- Work Section Ends -->
 
@@ -250,10 +251,10 @@
                 </div>
                 <div>
                     <div class="social-links">
-                        <a href="https://github.com/najeeb-anwari" target="_blank"><i class="bi-github"></i></a>
-                        <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank"><i class="bi-linkedin"></i></a>
-                        <a href="https://twitter.com/najeeb_anwari" target="_blank"><i class="bi-twitter"></i></a>
-                        <button class="btn  btn-sm btn-primary btn-shaddow btn-submit" type="submit">Submit</button>
+                        <a href="https://github.com/najeeb-anwari" target="_blank" aria-label="Najeeb Anwari's GitHub profile (opens in a new tab)"><i class="bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank" aria-label="Najeeb Anwari's LinkedIn profile (opens in a new tab)"><i class="bi-linkedin"></i></a>
+                        <a href="https://twitter.com/najeeb_anwari" target="_blank" aria-label="Najeeb Anwari's Twitter profile (opens in a new tab)"><i class="bi-twitter"></i></a>
+                        <button class="btn  btn-sm btn-primary btn-shadow btn-submit" type="submit">Submit</button>
                     </div>
                 </div>                
             </form>
@@ -273,16 +274,16 @@
 
     <!-- Navigation Section Starts -->
     <nav class="main-nav">
-        <ul>
+        <ul id="main-navigation"> <!-- Added id for aria-controls -->
            <li><a href="#intro">Home</a></li>
            <li><a href="#about">About</a></li>
            <li><a href="#work">Work</a></li>
            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="social-links">
-            <a href="https://github.com/najeeb-anwari" target="_blank"><i class="bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank"><i class="bi-linkedin"></i></a>
-            <a href="https://twitter.com/najeeb_anwari" target="_blank"><i class="bi-twitter"></i></a>
+            <a href="https://github.com/najeeb-anwari" target="_blank" aria-label="Najeeb Anwari's GitHub profile (opens in a new tab)"><i class="bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank" aria-label="Najeeb Anwari's LinkedIn profile (opens in a new tab)"><i class="bi-linkedin"></i></a>
+            <a href="https://twitter.com/najeeb_anwari" target="_blank" aria-label="Najeeb Anwari's Twitter profile (opens in a new tab)"><i class="bi-twitter"></i></a>
         </div>
     </nav>
     <!-- Navigation Section Ends -->
