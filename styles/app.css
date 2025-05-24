@@ -306,8 +306,8 @@ header .group-items {
     display: flex; 
     flex-direction: column; 
     justify-content: center; /* Vertically center content */
-    align-items: center; /* Horizontally center content */
-    text-align: center; /* Center text within child elements */
+    align-items: flex-start; /* Changed from center to left-align items */
+    /* text-align: center; Removed, will be handled by .short-info */
     background-color: var(--secondary); 
     min-height: 100vh; 
     padding: 6rem 2rem; /* Adjusted padding */
@@ -316,7 +316,7 @@ header .group-items {
 
 /* Short informational text in the intro */
 .short-info {
-    /* text-align: center; will be inherited */
+    text-align: left; /* Added to left-align text within this block */
     /* Spacing is handled by parent #intro's gap property */
 }
 

@@ -64,3 +64,117 @@ a {
 a:hover, a:focus {
     text-decoration: underline;
 }
+
+/* styles/global-overrides.css - Appended Content */
+
+/* 2. Spacing */
+#about,
+#work,
+#contact { /* Add other section IDs if they exist and need this padding */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* 3. Card Styling (.card general override) */
+.card {
+    padding: 2rem;
+    background-color: var(--card-bg); /* Uses new var if in dark mode */
+    color: var(--text-secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-top: 0; /* Remove individual card top/bottom margins */
+    margin-bottom: 0; /* Rely on grid gaps or section padding */
+}
+
+.dark-mode .card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Dark mode card shadow */
+}
+
+/* Ensure specific cards like project card still look good with this base */
+/* Project cards already have flex, direction column from previous step. */
+/* If #about .card-info or #contact .card need specific margin, add it here or in their section overrides */
+#about .card-info, #contact .card {
+    margin-bottom: 2rem; /* Example: restore some margin if they are standalone */
+}
+
+
+/* 4. Button Styling (.btn base override) */
+.btn {
+    padding: 0.75rem 1.5rem; /* Increased padding for better clickability */
+    border-radius: 5px;
+    font-size: 1rem; /* Standardized font size */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-out; /* Slightly faster transition */
+    text-decoration: none; /* Ensure no underline from global 'a' styles */
+    display: inline-block; /* Ensure proper layout */
+}
+
+.btn:hover, .btn:focus {
+    transform: translateY(-2px); /* Subtle lift */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow on hover */
+    text-decoration: none; /* Keep no underline on hover for buttons */
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white); /* Ensure high contrast text on primary bg */
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: hsl(212, 100%, 45%); /* Slightly darker primary on hover */
+    color: var(--white); /* Ensure text color remains high contrast */
+}
+
+/* Adjust .btn-dark if its colors were based on old variables */
+/* Assuming .btn-dark is for logo and theme toggle primarily */
+.btn-dark {
+    background-color: var(--text-primary); /* Use new text-primary */
+    color: var(--bg-primary); /* Use new bg-primary for contrast */
+}
+
+.btn-dark:hover, .btn-dark:focus {
+    background-color: var(--text-secondary); /* Or a slightly lighter version of text-primary */
+    color: var(--bg-primary);
+}
+
+/* Styles for theme toggle icon within button if needed */
+.theme-btn i {
+    color: inherit; /* Ensure icon inherits button's text color */
+}
+
+/* Remove .btn-shaddow class effects if it was used */
+/* The new hover effect on .btn provides a shadow */
+
+/* Adjust navigation styles if they were using old variables */
+.main-nav {
+    background-color: var(--nav-background, hsla(225, 70%, 12%, .9)); /* Fallback to old value if var not defined */
+}
+
+.main-nav li a {
+    color: var(--nav-text-color, var(--white)); /* Fallback */
+}
+
+.main-nav .social-links a,
+.main-nav .social-links a:visited {
+    color: var(--nav-text-color, var(--white)); /* Fallback */
+}
+
+/* Dark mode overrides for nav if not already covered by variable changes */
+.dark-mode .main-nav {
+    background-color: var(--nav-background, hsla(0, 0%, 10%, .9)); /* Fallback for dark mode nav */
+}
+
+.dark-mode .main-nav li a {
+    color: var(--nav-text-color, var(--text-primary)); /* Fallback for dark mode nav text */
+}
+
+.dark-mode .main-nav .social-links a,
+.dark-mode .main-nav .social-links a:visited {
+    color: var(--nav-text-color, var(--text-primary)); /* Fallback */
+}
