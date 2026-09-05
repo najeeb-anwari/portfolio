@@ -1,294 +1,420 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="shortcut icon" href="./images/favicon.PNG" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/app.css">
-    
-    <title>Najeeb Anwari</title>
-</head>
-<body>
-    <!-- Header Section Starts -->
-    <header>
-        <div class="logo btn btn-dark btn-sm "><code>&lt;/&gt;</code></div>
-        <div class="group-items">
-            <button class="theme-btn btn btn-dark"><i class="bi-moon-stars"></i></button>
-            <button class="menu-btn btn btn-primary"><i class="bi-list"></i></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta name="description" content="Portfolio of Abdul Najeeb Anwari, a full stack software engineer building enterprise systems, ERP platforms, and real-time web applications." />
+    <link rel="canonical" href="https://najeeb-anwari.github.io/portfolio/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2313201a'/%3E%3Ctext x='16' y='21' fill='%23f7f5ef' font-family='Arial,sans-serif' font-size='12' font-weight='700' text-anchor='middle'%3EAN%3C/text%3E%3C/svg%3E" />
+    <meta property="og:title" content="Abdul Najeeb Anwari | Full Stack Software Engineer" />
+    <meta property="og:description" content="Enterprise systems, ERP platforms, and real-time web applications." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://najeeb-anwari.github.io/portfolio/" />
+    <title>Abdul Najeeb Anwari | Full Stack Software Engineer</title>
+
+    <link rel="stylesheet" href="./tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=optional" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=optional" rel="stylesheet" /></noscript>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <div class="noise fixed inset-0 z-50"></div>
+
+    <header class="relative z-40 border-b border-line/80 bg-paper/90 backdrop-blur-md">
+      <div class="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-5 lg:px-10">
+        <a href="#top" class="focus-ring flex items-center gap-3" aria-label="Abdul Najeeb Anwari home">
+          <span class="flex h-10 w-10 items-center justify-center bg-ink font-mono text-sm font-medium tracking-[-0.08em] text-paper">AN</span>
+          <span class="hidden text-sm font-semibold tracking-tight sm:block">Abdul Najeeb<br /><span class="font-normal text-moss">Anwari</span></span>
+        </a>
+
+        <nav class="hidden items-center gap-8 text-xs font-medium uppercase tracking-[0.16em] text-ink/85 md:flex" aria-label="Main navigation">
+          <a class="nav-link focus-ring" href="#work">Work</a>
+          <a class="nav-link focus-ring" href="#experience">Experience</a>
+          <a class="nav-link focus-ring" href="#about">About</a>
+          <a class="nav-link focus-ring" href="#contact">Contact</a>
+        </nav>
+
+        <a class="focus-ring hidden items-center gap-3 text-xs font-bold uppercase tracking-[0.14em] text-vermillion md:flex" href="mailto:najeeb.anwari@gmail.com">
+          Let’s talk
+          <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </a>
+
+        <button id="menu-button" class="menu-button focus-ring flex h-10 w-10 items-center justify-center border border-ink/40 md:hidden" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-open" class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+          <svg id="menu-close" class="hidden h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="hidden border-t border-line px-6 py-5 md:hidden" aria-label="Mobile navigation">
+        <div class="flex flex-col gap-5 text-xs font-bold uppercase tracking-[0.16em]">
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
-        
+      </nav>
     </header>
-    <!-- Header Section Ends -->
 
-    <!-- Main Section Starts -->
-    <main>
-        <!-- Intro Section Starts -->
-        <section id="intro">
-            <div class="short-info">
-                <h1>Hi, my <br>name is Najeeb </h1>
-                <p>I love creating beautiful web applications.</p>
+    <main id="top">
+      <section class="relative overflow-hidden border-b border-line/80" aria-labelledby="hero-title">
+        <div class="grid-paper absolute inset-0"></div>
+        <div class="relative mx-auto grid max-w-[1240px] gap-12 px-6 pb-20 pt-16 lg:grid-cols-[1.14fr_.86fr] lg:gap-16 lg:px-10 lg:pb-28 lg:pt-24">
+          <div class="reveal flex flex-col justify-center">
+            <div class="mb-8 flex items-center gap-3 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-moss">
+              <span class="pulse-dot h-2 w-2 rounded-full bg-vermillion"></span>
+              Available for select projects
             </div>
-            <div class="img-container">
-                <img src="./images/undraw_hello_re_3evm.svg" alt="Programmer Image">
+            <h1 id="hero-title" class="max-w-4xl text-[clamp(3.7rem,9vw,8.6rem)] font-bold leading-[0.86] tracking-[-0.085em] text-ink">
+              Systems<br />with <em class="font-serif font-normal tracking-[-0.06em] text-vermillion">purpose.</em>
+            </h1>
+            <p class="mt-9 max-w-xl text-lg leading-8 text-ink/85 sm:text-xl">
+              Abdul Najeeb Anwari is a full stack software engineer turning complex operations into clear, resilient digital products.
+            </p>
+            <div class="mt-10 flex flex-wrap items-center gap-5">
+              <a href="#work" class="focus-ring inline-flex items-center gap-4 bg-vermillion px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white hover:bg-ink">
+                Explore selected work
+                <svg class="arrow-icon h-4 w-4" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </a>
+              <a href="./Abdul%20Najeeb%20Anwari%20-%20CV.pdf" download class="arrow-link focus-ring inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.12em] text-ink">
+                Download CV
+                <svg class="arrow-icon h-4 w-4" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v9m0 0 3.5-3.5M8 11 4.5 7.5M2.5 14h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </a>
             </div>
-        </section>
-        <!-- Intro Section Ends -->
+          </div>
 
-        <!-- About Section Starts -->
-        <section id="about">
-            <h1>About me</h1>
-            
-            <div class="img-container">
-                <img src="./images/undraw_profile_re_4a55.svg" alt="Programmer Image">
-            </div>
-
-            <div class="card-info">
-
-                <div class="author">
-                    <div class="profile-img">
-                        <img src="./images/profile-picture.jpg" alt="Abdul Najeeb Anwari's Profile Picture">
-                    </div>
-                    <h2 class="author-name">
-                        Abdul Najeeb<br> Anwari
-                    </h2>
-                    <div class="author-position">
-                        Web Developer
-                    </div>
-                </div>
-                
-                <div class="author-details">
-                    <table>
-                        <tr>
-                            <th>Residence:</th>
-                            <td>Afghanistan</td>
-                        </tr>
-                        <tr>
-                            <th>City:</th>
-                            <td>Kabul</td>
-                        </tr>
-                        <tr>
-                            <th>Age:</th>
-                            <td>28</td>
-                        </tr>
-                    </table>
-                    <hr>
-                    
-                    <h2>Language</h2>
-                    <div class="languages">
-                        <div class="language">
-                            <div class="lang-name">English</div>
-                            <div class="percentage">75%</div>
-                            <progress value="75" max="100"></progress>
-                            
-                        </div>
-                        <div class="language">
-                            <div class="lang-name">Pashto</div>
-                            <div class="percentage">100%</div>
-                            <progress value="90" max="100"></progress>
-                            
-                        </div>
-                        <div class="language">
-                            <div class="lang-name">Dari</div>
-                            <div class="percentage">100%</div>
-                            <progress value="90" max="100"></progress>
-                            
-                        </div>
-                    </div>
-                    <hr>
-                    <h2>Coding Language</h2>
-                    <div class="languages">
-
-                        <div class="language">  
-                            <div class="lang-name">HTML</div>
-                            <div class="percentage">95%</div>
-                            <progress value="95" max="100"></progress>
-                            
-                        </div>
-
-                        <div class="language">
-                            <div class="lang-name">CSS</div>
-                            <div class="percentage">90%</div>
-                            <progress value="90" max="100"></progress>
-                            
-                        </div>
-
-                        <div class="language">
-                            <div class="lang-name">JavaScript</div>
-                            <div class="percentage">80%</div>
-                            <progress value="80" max="100"></progress>
-                            
-                        </div>
-
-                        <div class="language">
-                            <div class="lang-name">PHP</div>
-                            <div class="percentage">65%</div>
-                            <progress value="65" max="100"></progress>
-                            
-                        </div>
-                        
-                    </div>
-                    <hr>
-                    <h2>Knowledge</h2>
-                    <ul class="knowledge">
-                        <li>Git/GitHub</li>
-                        <li>Laravel</li>
-                        <li>Laravel Live-wire</li>
-                        <li>Responsie Design</li>
-                        <li>MySQL/SQL SERVER</li>
-                    </ul>
-                    <hr>
-                    <a id="cv" href="https://drive.google.com/file/d/1UJ2YGzxkb5bY0kwJTcGUl5Oh3HgBfB-U/view?usp=sharing" target="_blank">Download CV</a>
-                </div>
-                <div class="author-social-links">
-                    <a href="https://github.com/najeeb-anwari" target="_blank"><i class="bi-github"></i></a>
-                    <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank"><i class="bi-linkedin"></i></a>
-                    <a href="https://twitter.com/najeeb_anwari" target="_blank"><i class="bi-twitter"></i></a>
-                </div>
-
-            </div>
-            <div class="card journey">
-                <h2>My Journey</h2>
-                <p>
-                    From my childhood I loved computers. The computer was like candy to a child to me. I was always looking at my eldest brother's desktop computer. 
-                    I learned many things only by observing him using his computer. 
-                </p>
-                <p>
-                    When I was ten years old, my father taught me mathematics. Eventually, I loved mathematics and its problem-solving.
-                    When I finished high school, I started computer science and decided to learn everything with passion. 
-                    My passion was the reason I had high scores in every subject. 
-                    In the first semester, I learned about programming in the c++ language. 
-                    Eventually, in the third semester, I started to learn about data structures and algorithms and implemented the following;
-                    Bubble sort, select sort, insert sort, stack, queue, singly linked list, and doubly linked.
-                    It was a great experience and was the beginning of my improvement in problem-solving. 
-                    That is the reason I started to learn more about web development and software engineering.
-                </p>
-                <p>
-                    After graduation, I could not find any job because of fewer opportunities in my country and nepotism. 
-                    But, I did not give up and tried to implement my skills by practicing. 
-                    For example, I used a website called CodeSignal to practice problem-solving skills.
-                    Additionally, I tried to build some web applications for people for free to keep myself busy with coding. 
-                    And I did some freelancing projects in my local area. 
-                    Nowadays, I am practicing front-end challenges on frontendmentor.io, which is a great website.
-                </p>
-                <p> 
-                    That was not the end. I met the Imagine Organization based in Germany.
-                    They are helping people to think better and helping them to get a job in European countries like Germany.
-                    I met my first volunteer coach, Annamaria Bero, at Imagine.
-                    She helped me to work on my CV and my LinkedIn profile. She is an outstanding coach and very friendly and inspiring.
-                    Her advice inspired me to become more active and work on my self-improvement.   
-                </p>
-            </div>
-
-        </section>
-        <!-- About Section Ends -->
-
-        <!-- Work Section Starts -->
-        <section id="work">
-            <h1>Some projects<br> I have worked on</h1>
-            <div class="img-container">
-                <img src="./images/undraw_programming_re_kg9v.svg" alt="Project Image">
-            </div>
-            <div class="card project">
-                <div class="img-container">
-                    <img src="./images/Projects/Shopping/thumbnail.png" alt="Project Image">
-                </div>
-                <h2 class="project-title">Shopping Website</h2>
-                <div class="technologies">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>PHP</span>
-                    <span>Laravel</span>
-                    <span>Laravel Livewire</span>
-                </div>
-                <p class="project-description">
-                    It is a shopping website build with Laravel and livewire. 
-                    In this project I learn about Laravel Livewire.
-                    This is something I have made for free to implement my skills.
-                </p>
-
-                <div class="actions">
-                    <!-- <a href="#" class="btn btn-sm btn-disabled" ><code>&lt;/source&gt;</code></a> -->
-                    <a href="https://drive.google.com/file/d/1gUtr2RrX0Yz1XpVzGWPQ6xEryD-spOui/view?usp=sharing" target="_blank" class="btn btn-sm btn-shaddow btn-primary">Preview</a>
-                </div>
-            </div>
-        </section>
-        <!-- Work Section Ends -->
-
-        <!-- Contact Section Starts -->
-        <section id="contact">
-            <h1>Get in Touch!</h1>
-            <div class="img-container">
-                <img src="./images/undraw_message_sent_re_q2kl.svg" alt="">
-            </div>
-            <form action="#" method="post" class="card">
-                <h2>Contact Form</h2>
-                <div class="input-group">
-                    <label for="name">
-                        <span>Your Name:</span>
-                        <input type="text" name="name" id="name">
-                    </label>
-                    
-                </div>
-                
-                <div class="input-group">
-                    <label for="email">
-                        <span>Email:</span>
-                        <input type="email" name="email" id="email">
-                    </label>
-                </div>
-                <div class="input-group">
-                    <label for="message">
-                        <span>Message:</span>
-                        <textarea name="message" id="message" cols="30" rows="5"></textarea>
-                    </label>
+          <div class="reveal relative flex items-center justify-center [animation-delay:180ms]">
+            <div class="relative aspect-square w-full max-w-[430px]">
+              <div class="hero-orbit absolute inset-[10%] border border-ink/30"></div>
+              <div class="hero-orbit-reverse absolute inset-[20%] border border-vermillion/65"></div>
+              <div class="hero-card absolute left-1/2 top-1/2 flex h-[58%] w-[72%] -translate-x-1/2 -translate-y-1/2 flex-col justify-between overflow-hidden rounded-[1.75rem] bg-ink p-6 text-paper sm:p-8">
+                <div class="flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.2em]">
+                  <span>AN / 01</span>
+                  <span class="text-paper/65">2025</span>
                 </div>
                 <div>
-                    <div class="social-links">
-                        <a href="https://github.com/najeeb-anwari" target="_blank"><i class="bi-github"></i></a>
-                        <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank"><i class="bi-linkedin"></i></a>
-                        <a href="https://twitter.com/najeeb_anwari" target="_blank"><i class="bi-twitter"></i></a>
-                        <button class="btn  btn-sm btn-primary btn-shaddow btn-submit" type="submit">Submit</button>
-                    </div>
-                </div>                
-            </form>
-        </section>
-        <!-- Contact Section Ends -->
-
-    </main>
-    <!-- Main Section Ends -->
-
-    <!-- Footer Section Starts -->
-    <footer>
-        <p>
-            &copy; Abdul Najeeb Anwari
-        </p>
-    </footer>
-    <!-- Footer Section Ends -->
-
-    <!-- Navigation Section Starts -->
-    <nav class="main-nav">
-        <ul>
-           <li><a href="#intro">Home</a></li>
-           <li><a href="#about">About</a></li>
-           <li><a href="#work">Work</a></li>
-           <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="social-links">
-            <a href="https://github.com/najeeb-anwari" target="_blank"><i class="bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/abdul-najeeb-anwari" target="_blank"><i class="bi-linkedin"></i></a>
-            <a href="https://twitter.com/najeeb_anwari" target="_blank"><i class="bi-twitter"></i></a>
+                  <div class="mb-4 h-1 w-12 bg-vermillion"></div>
+                  <p class="font-serif text-4xl leading-[0.95] sm:text-5xl">Build<br /><em>better.</em></p>
+                  <p class="mt-5 font-mono text-[9px] uppercase tracking-[0.16em] text-paper/65">Systems / data / outcomes</p>
+                </div>
+                <div class="flex items-center justify-between border-t border-paper/30 pt-4 font-mono text-[9px] uppercase tracking-[0.14em] text-paper/70">
+                  <span>Live system</span>
+                  <span>04.02</span>
+                </div>
+              </div>
+              <div class="absolute right-[2%] top-[12%] animate-float font-mono text-[10px] uppercase tracking-[0.16em] text-moss [animation-delay:700ms]">KBL / 34.5553° N</div>
+              <div class="absolute bottom-[11%] left-[2%] font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Full stack / real time</div>
+            </div>
+          </div>
         </div>
-    </nav>
-    <!-- Navigation Section Ends -->
+        <div class="relative mx-auto flex max-w-[1240px] items-center justify-between border-t border-line/80 px-6 py-4 font-mono text-[10px] uppercase tracking-[0.18em] text-moss lg:px-10">
+          <span>Kabul, Afghanistan</span>
+          <span class="hidden sm:block">Enterprise software / human outcomes</span>
+          <span>Scroll to explore ↓</span>
+        </div>
+      </section>
 
-    <!-- Scripts Section Starts -->
+      <section id="work" class="scroll-mt-20 border-b border-line/80" aria-labelledby="work-title">
+        <div class="mx-auto max-w-[1240px] px-6 py-20 lg:px-10 lg:py-28">
+          <div class="reveal grid gap-8 lg:grid-cols-[.32fr_1fr] lg:gap-20">
+            <div>
+              <p class="section-rule font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-moss">01 / Selected work</p>
+              <h2 id="work-title" class="mt-6 max-w-xs font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl">Useful things, built well.</h2>
+            </div>
+            <div class="flex items-end justify-between gap-8">
+              <p class="max-w-xl text-base leading-7 text-ink/80">From hospital operations to real-time collaboration, these products make essential work simpler, faster, and more dependable.</p>
+              <span class="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-vermillion sm:block">04 projects</span>
+            </div>
+          </div>
+
+          <div class="reveal mt-12 grid max-w-3xl grid-cols-3 border-y border-line py-5 [animation-delay:80ms]">
+            <div class="border-r border-line pr-3 sm:pr-6">
+              <p class="font-serif text-3xl leading-none tracking-[-0.04em] text-vermillion sm:text-4xl">5+</p>
+              <p class="mt-2 font-mono text-[9px] uppercase leading-4 tracking-[0.12em] text-moss sm:text-[10px]">Years building</p>
+            </div>
+            <div class="border-r border-line px-3 sm:px-6">
+              <p class="font-serif text-3xl leading-none tracking-[-0.04em] text-ink sm:text-4xl">04</p>
+              <p class="mt-2 font-mono text-[9px] uppercase leading-4 tracking-[0.12em] text-moss sm:text-[10px]">Flagship systems</p>
+            </div>
+            <div class="pl-3 sm:pl-6">
+              <p class="font-serif text-3xl leading-none tracking-[-0.04em] text-ink sm:text-4xl">03</p>
+              <p class="mt-2 font-mono text-[9px] uppercase leading-4 tracking-[0.12em] text-moss sm:text-[10px]">Working languages</p>
+            </div>
+          </div>
+
+          <div class="mt-14 grid gap-5 md:grid-cols-2">
+            <article class="project-card reveal group relative overflow-hidden border border-line bg-white/45 p-7 shadow-none [animation-delay:100ms] sm:p-9">
+              <div class="flex items-start justify-between">
+                <span class="project-number font-mono text-xs text-ink/75 transition-colors">01</span>
+                <span class="rounded-full border border-vermillion/65 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-vermillion">Healthcare</span>
+              </div>
+              <div class="mt-16 max-w-md sm:mt-20">
+                <h3 class="text-3xl font-semibold tracking-[-0.045em]">Hospital ERP System</h3>
+                <p class="mt-4 leading-7 text-ink/80">A complete operational suite for patient intake, medical records, pharmacy stock, QR inventory search, billing, and reporting.</p>
+              </div>
+              <div class="mt-9 flex flex-wrap gap-2">
+                <span class="pill rounded-full bg-ink px-3 py-1.5 font-mono text-[10px] text-paper">Laravel</span>
+                <span class="pill rounded-full bg-sand px-3 py-1.5 font-mono text-[10px] text-ink">Livewire</span>
+                <span class="pill rounded-full bg-sand px-3 py-1.5 font-mono text-[10px] text-ink">MySQL</span>
+              </div>
+              <div class="mt-10 border-t border-line pt-5 font-mono text-[10px] uppercase tracking-[0.13em] text-moss">TALL stack / operational clarity</div>
+            </article>
+
+            <article class="project-card reveal group relative overflow-hidden border border-line bg-ink p-7 text-paper shadow-none [animation-delay:180ms] sm:p-9">
+              <div class="flex items-start justify-between">
+                <span class="project-number font-mono text-xs text-paper/65 transition-colors">02</span>
+                <span class="rounded-full border border-paper/35 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-paper/90">Enterprise</span>
+              </div>
+              <div class="mt-16 max-w-md sm:mt-20">
+                <h3 class="text-3xl font-semibold tracking-[-0.045em]">Mumtaz Eagle Corporate ERP</h3>
+                <p class="mt-4 leading-7 text-paper/82">One connected platform for HR, finance, procurement, assets, inventory, approvals, and executive reporting.</p>
+              </div>
+              <div class="mt-9 flex flex-wrap gap-2">
+                <span class="pill rounded-full bg-vermillion px-3 py-1.5 font-mono text-[10px] text-white">Laravel</span>
+                <span class="pill rounded-full bg-paper/15 px-3 py-1.5 font-mono text-[10px] text-paper/90">Mary UI</span>
+                <span class="pill rounded-full bg-paper/15 px-3 py-1.5 font-mono text-[10px] text-paper/90">Redis</span>
+              </div>
+              <div class="mt-10 border-t border-paper/30 pt-5 font-mono text-[10px] uppercase tracking-[0.13em] text-paper/70">ERP / cross-team workflow</div>
+            </article>
+
+            <article class="project-card reveal group relative overflow-hidden border border-line bg-white/45 p-7 shadow-none [animation-delay:260ms] sm:p-9">
+              <div class="flex items-start justify-between">
+                <span class="project-number font-mono text-xs text-ink/75 transition-colors">03</span>
+                <span class="rounded-full border border-moss/60 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-moss">Real-time</span>
+              </div>
+              <div class="mt-16 max-w-md sm:mt-20">
+                <h3 class="text-3xl font-semibold tracking-[-0.045em]">Eagle Chat &amp; Eagle Space</h3>
+                <p class="mt-4 leading-7 text-ink/80">Live messaging products with group conversations, workspace channels, presence, admin controls, and WebSocket infrastructure.</p>
+              </div>
+              <div class="mt-9 flex flex-wrap gap-2">
+                <span class="pill rounded-full bg-ink px-3 py-1.5 font-mono text-[10px] text-paper">Reverb</span>
+                <span class="pill rounded-full bg-sand px-3 py-1.5 font-mono text-[10px] text-ink">WebSockets</span>
+                <span class="pill rounded-full bg-sand px-3 py-1.5 font-mono text-[10px] text-ink">Redis</span>
+              </div>
+              <div class="mt-10 border-t border-line pt-5 font-mono text-[10px] uppercase tracking-[0.13em] text-moss">Live systems / presence</div>
+            </article>
+
+            <article class="project-card reveal group relative overflow-hidden border border-line bg-agency p-7 text-paper shadow-none [animation-delay:340ms] sm:p-9">
+              <div class="flex items-start justify-between">
+                <span class="project-number font-mono text-xs text-paper/65 transition-colors">04</span>
+                <span class="rounded-full border border-paper/35 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-paper/90">Public sector</span>
+              </div>
+              <div class="mt-16 max-w-md sm:mt-20">
+                <h3 class="text-3xl font-semibold tracking-[-0.045em]">Atomic Energy Agency ERP</h3>
+                <p class="mt-4 leading-7 text-paper/82">A centralized administration and inventory system supporting HR, procurement, project tracking, and government reporting workflows.</p>
+              </div>
+              <div class="mt-9 flex flex-wrap gap-2">
+                <span class="pill rounded-full bg-ink px-3 py-1.5 font-mono text-[10px] text-paper">Blazor</span>
+                <span class="pill rounded-full bg-paper/15 px-3 py-1.5 font-mono text-[10px] text-paper/90">C#</span>
+                <span class="pill rounded-full bg-paper/15 px-3 py-1.5 font-mono text-[10px] text-paper/90">ASP.NET</span>
+              </div>
+              <div class="mt-10 border-t border-paper/30 pt-5 font-mono text-[10px] uppercase tracking-[0.13em] text-paper/75">Government / dependable data</div>
+            </article>
+          </div>
+
+          <div class="reveal mt-5 border border-line bg-sand/55 px-7 py-6 [animation-delay:420ms] sm:px-9">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-sm leading-6 text-ink/80"><strong class="font-semibold text-ink">Also built:</strong> object detection and tracking, attendance and employee ID systems, e-commerce, scholarship management, ISP applications, and Python data-cleaning utilities for Kobo forms.</p>
+              <span class="shrink-0 font-mono text-[10px] uppercase tracking-[0.15em] text-moss">+ 10 systems</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="relative isolate scroll-mt-20 overflow-hidden border-b border-line/80" aria-labelledby="experience-title">
+        <div class="experience-pattern" aria-hidden="true"></div>
+        <div class="relative z-10 mx-auto max-w-[1240px] px-6 py-20 lg:px-10 lg:py-28">
+          <div class="reveal grid gap-8 lg:grid-cols-[.32fr_1fr] lg:gap-20">
+            <div>
+              <p class="section-rule font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-moss">02 / Experience</p>
+              <h2 id="experience-title" class="mt-6 max-w-xs font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl">A steady hand for complex work.</h2>
+              <div class="mt-8 hidden items-center gap-3 font-mono text-[10px] uppercase tracking-[0.14em] text-moss lg:flex">
+                <span>2016</span>
+                <span class="h-px w-10 bg-line"></span>
+                <span>Now</span>
+              </div>
+            </div>
+            <div>
+              <p class="max-w-xl text-base leading-7 text-ink/80">Five-plus years designing, shipping, and maintaining software where accuracy matters. I work across product thinking, architecture, interfaces, data, and delivery.</p>
+            </div>
+          </div>
+
+          <div class="mt-16 grid gap-12 lg:grid-cols-[.32fr_1fr] lg:gap-20">
+            <aside class="hidden lg:block" aria-label="Career arc">
+              <div class="career-rail max-w-[190px] border-t border-line pt-5">
+                <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Career arc</p>
+                <div class="mt-7 space-y-7 font-mono text-[10px] uppercase tracking-[0.12em]">
+                  <div>
+                    <p class="text-vermillion">2016 — 2020</p>
+                    <p class="mt-1 text-ink/75">PATH / foundations</p>
+                  </div>
+                  <div>
+                    <p class="text-ink">2022 — 2023</p>
+                    <p class="mt-1 text-ink/75">Atomic agency / scale</p>
+                  </div>
+                  <div>
+                    <p class="text-ink">2023 — now</p>
+                    <p class="mt-1 text-ink/75">Mumtaz Eagle / systems</p>
+                  </div>
+                </div>
+                <p class="mt-8 max-w-[160px] text-xs leading-5 text-ink/70">From relational foundations to real-time enterprise systems.</p>
+              </div>
+            </aside>
+
+            <div>
+            <article class="reveal relative border-l border-ink/40 pb-14 pl-7 sm:pl-10">
+              <span class="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-vermillion ring-4 ring-paper"></span>
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                    <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-vermillion-dark">Oct 2023 — Present</p>
+                  <h3 class="mt-3 text-2xl font-semibold tracking-[-0.035em]">Software Developer</h3>
+                  <p class="mt-1 text-sm text-moss">Mumtaz Eagle Ltd · Kabul, Afghanistan</p>
+                </div>
+                <span class="hidden font-mono text-[10px] uppercase tracking-[0.14em] text-ink/75 sm:block">01 / 03</span>
+              </div>
+              <ul class="mt-7 grid gap-4 text-sm leading-6 text-ink/85 sm:grid-cols-2">
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-vermillion"></span><span><strong class="font-semibold text-ink">Engineering leadership.</strong> Coordinated development workflows, code reviews, and timely feature delivery.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-vermillion"></span><span><strong class="font-semibold text-ink">Hospital platform.</strong> Architected patient records, pharmacy inventory, and administrative reporting.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-vermillion"></span><span><strong class="font-semibold text-ink">Enterprise suite.</strong> Connected HR, finance, procurement, and inventory across departments.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-vermillion"></span><span><strong class="font-semibold text-ink">API standards.</strong> Standardized documentation and automated Postman/Insomnia testing.</span></li>
+              </ul>
+              <p class="mt-7 border-t border-line pt-4 font-mono text-[10px] leading-5 tracking-[0.04em] text-moss"><span class="text-ink">Stack:</span> Node.js · PHP · Laravel · Livewire · Vue · React · TypeScript · Tailwind · Redis · SQL</p>
+            </article>
+
+            <article class="reveal relative border-l border-ink/40 pb-14 pl-7 sm:pl-10 [animation-delay:140ms]">
+              <span class="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-ink ring-4 ring-paper"></span>
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Jul 2022 — Sep 2023</p>
+                  <h3 class="mt-3 text-2xl font-semibold tracking-[-0.035em]">Software Developer</h3>
+                  <p class="mt-1 text-sm text-moss">Afghanistan Atomic Energy Agency · Kabul</p>
+                </div>
+                <span class="hidden font-mono text-[10px] uppercase tracking-[0.14em] text-ink/75 sm:block">02 / 03</span>
+              </div>
+              <ul class="mt-7 grid gap-4 text-sm leading-6 text-ink/85 sm:grid-cols-2">
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-ink"></span><span><strong class="font-semibold text-ink">Agency ERP.</strong> Delivered HR, procurement, inventory, project management, and reporting workflows.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-ink"></span><span><strong class="font-semibold text-ink">Workflow automation.</strong> Built data-entry and operational tracking tools for better accuracy.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-ink"></span><span><strong class="font-semibold text-ink">Quality assurance.</strong> Added Selenium UI/integration testing and regular data audits.</span></li>
+              </ul>
+              <p class="mt-7 border-t border-line pt-4 font-mono text-[10px] leading-5 tracking-[0.04em] text-moss"><span class="text-ink">Stack:</span> PHP · Laravel · Blazor · ASP.NET Core · Entity Framework Core · Selenium · SQL · C++</p>
+            </article>
+
+            <article class="reveal relative border-l border-ink/40 pl-7 sm:pl-10 [animation-delay:280ms]">
+              <span class="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-ink ring-4 ring-paper"></span>
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Jan 2016 — Jan 2020</p>
+                  <h3 class="mt-3 text-2xl font-semibold tracking-[-0.035em]">Software Developer</h3>
+                  <p class="mt-1 text-sm text-moss">PATH Organization · Kabul, Afghanistan</p>
+                </div>
+                <span class="hidden font-mono text-[10px] uppercase tracking-[0.14em] text-ink/75 sm:block">03 / 03</span>
+              </div>
+              <ul class="mt-7 grid gap-4 text-sm leading-6 text-ink/85 sm:grid-cols-2">
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-ink"></span><span><strong class="font-semibold text-ink">Database architecture.</strong> Designed and maintained relational models for enterprise applications.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-ink"></span><span><strong class="font-semibold text-ink">Legacy refactoring.</strong> Improved runtime performance, maintainability, and hosting efficiency.</span></li>
+                <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 bg-ink"></span><span><strong class="font-semibold text-ink">Cross-functional delivery.</strong> Partnered with product owners and team leads to improve data workflows.</span></li>
+              </ul>
+              <p class="mt-7 border-t border-line pt-4 font-mono text-[10px] leading-5 tracking-[0.04em] text-moss"><span class="text-ink">Stack:</span> PHP · MySQL · Laravel · JavaScript · jQuery · Bootstrap · HTML5 · CSS3</p>
+            </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="scroll-mt-20 border-b border-line/80" aria-labelledby="about-title">
+        <div class="mx-auto max-w-[1240px] px-6 py-20 lg:px-10 lg:py-28">
+          <div class="reveal grid gap-12 lg:grid-cols-[.32fr_1fr] lg:gap-20">
+            <div>
+              <p class="section-rule font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-moss">03 / About</p>
+              <h2 id="about-title" class="mt-6 max-w-xs font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl">Beyond the stack.</h2>
+            </div>
+            <div class="grid gap-12 md:grid-cols-[1.1fr_.9fr] md:gap-16">
+              <div>
+                <p class="text-2xl leading-[1.25] tracking-[-0.03em] text-ink sm:text-3xl">Good software respects the people who rely on it. My job is to make complex systems feel <em class="font-serif text-vermillion">obvious.</em></p>
+                <p class="mt-7 max-w-lg leading-7 text-ink/80">I care about the full shape of a product: dependable data, thoughtful interfaces, maintainable code, and the small details that help teams move with confidence.</p>
+              </div>
+              <div>
+                <div class="border-t border-line pt-5">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Education</p>
+                  <div class="mt-5 space-y-6">
+                    <div>
+                      <p class="font-semibold">Master’s in Information Systems</p>
+                      <p class="mt-1 text-sm text-moss">Kabul University · 2023 — Present</p>
+                    </div>
+                    <div>
+                      <p class="font-semibold">Bachelor’s in Computer Science</p>
+                      <p class="mt-1 text-sm text-moss">Karwan University · GPA 3.63 / 4.00</p>
+                      <span class="mt-3 inline-block bg-vermillion/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-vermillion-dark">Ranked 1st in class</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-10 border-t border-line pt-5">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Languages</p>
+                  <div class="mt-4 grid grid-cols-3 gap-3 text-sm">
+                    <div><p class="font-semibold">English</p><p class="mt-1 text-xs text-moss">Fluent</p></div>
+                    <div><p class="font-semibold">Pashto</p><p class="mt-1 text-xs text-moss">Native</p></div>
+                    <div><p class="font-semibold">Dari</p><p class="mt-1 text-xs text-moss">Native</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal mt-16 grid gap-5 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-4 [animation-delay:140ms]">
+            <div>
+              <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Backend</p>
+              <p class="mt-3 text-sm leading-6 text-ink/80">Node.js, PHP, Laravel, ASP.NET Core, Blazor, Python, C++</p>
+            </div>
+            <div>
+              <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Frontend</p>
+              <p class="mt-3 text-sm leading-6 text-ink/80">React, Vue, TypeScript, Livewire, Tailwind, Alpine, Inertia</p>
+            </div>
+            <div>
+              <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Data &amp; APIs</p>
+              <p class="mt-3 text-sm leading-6 text-ink/80">REST APIs, MySQL, SQL, Redis, WebSockets, Reverb</p>
+            </div>
+            <div>
+              <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-moss">Practice</p>
+              <p class="mt-3 text-sm leading-6 text-ink/80">Git, Postman, Insomnia, Selenium, code review, technical leadership</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="scroll-mt-20 bg-ink text-paper" aria-labelledby="contact-title">
+        <div class="relative mx-auto max-w-[1240px] overflow-hidden px-6 py-20 lg:px-10 lg:py-28">
+          <div class="hero-orbit absolute -right-14 -top-20 h-72 w-72 rounded-full border border-paper/20"></div>
+          <div class="hero-orbit-reverse absolute -right-2 top-0 h-52 w-52 rounded-full border border-vermillion/65"></div>
+          <div class="relative grid gap-14 lg:grid-cols-[1fr_.7fr] lg:items-end">
+            <div class="reveal">
+              <p class="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-vermillion-bright">04 / Contact</p>
+              <h2 id="contact-title" class="mt-7 max-w-2xl text-[clamp(3.6rem,8vw,7.5rem)] font-bold leading-[0.86] tracking-[-0.08em]">Let’s make<br /><em class="font-serif font-normal tracking-[-0.05em] text-vermillion">useful</em> things.</h2>
+            </div>
+            <div class="reveal [animation-delay:160ms]">
+              <p class="max-w-sm text-base leading-7 text-paper/82">Have a product, system, or operational knot that needs untangling? I’d like to hear about it.</p>
+              <a href="mailto:najeeb.anwari@gmail.com" class="focus-ring mt-8 inline-flex items-center gap-4 border-b border-vermillion pb-3 text-lg font-semibold text-paper hover:text-vermillion">
+                najeeb.anwari@gmail.com
+                <svg class="arrow-icon h-5 w-5" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </a>
+              <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 font-mono text-[10px] uppercase tracking-[0.15em] text-paper/75">
+                <a class="focus-ring hover:text-paper" href="https://www.linkedin.com/in/abdul-najeeb-anwari/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                <a class="focus-ring hover:text-paper" href="https://github.com/najeeb-anwari" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-ink px-6 pb-8 text-paper lg:px-10">
+      <div class="mx-auto flex max-w-[1240px] flex-col gap-4 border-t border-paper/30 pt-6 font-mono text-[10px] uppercase tracking-[0.14em] text-paper/65 sm:flex-row sm:items-center sm:justify-between">
+        <span>© <span id="year"></span> Abdul Najeeb Anwari</span>
+        <span>Built for useful work · Kabul, AF</span>
+      </div>
+    </footer>
+
     <script src="./scripts/app.js"></script>
-    <!-- Scripts Section Ends -->
-</body>
+  </body>
 </html>

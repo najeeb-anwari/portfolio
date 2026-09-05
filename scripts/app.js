@@ -1,34 +1,34 @@
-const menuBtn = document.querySelector(".menu-btn");
-const menuBtnIcon = menuBtn.querySelector("i");
-let isNavOpen = false;
-const mainNav = document.querySelector(".main-nav");
-menuBtn.addEventListener("click", (e) => {
-    isNavOpen = !isNavOpen;
-    if(isNavOpen) {
-        menuBtnIcon.classList.replace("bi-list", "bi-x-lg")
-    }
-    else {
-        menuBtnIcon.classList.replace("bi-x-lg", "bi-list");
-    }
-    mainNav.classList.toggle("show-nav"); 
-    
+const menuButton = document.querySelector('#menu-button');
+const mobileMenu = document.querySelector('#mobile-menu');
+const menuOpen = document.querySelector('#menu-open');
+const menuClose = document.querySelector('#menu-close');
+
+menuButton.addEventListener('click', () => {
+  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!isOpen));
+  mobileMenu.classList.toggle('hidden', isOpen);
+  menuOpen.classList.toggle('hidden', !isOpen);
+  menuClose.classList.toggle('hidden', isOpen);
 });
 
-const menuLinks = document.querySelector(".main-nav ul");
-menuLinks.addEventListener("click", (e) => {
-    if(e.target.nodeName == "A") {
-        isNavOpen = !isNavOpen;
-        menuBtnIcon.classList.replace("bi-x-lg", "bi-list");
-        mainNav.classList.toggle("show-nav");
-    }
+mobileMenu.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    menuButton.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.add('hidden');
+    menuOpen.classList.remove('hidden');
+    menuClose.classList.add('hidden');
+  });
 });
 
-const themeBtn = document.querySelector(".theme-btn");
-themeBtn.addEventListener("click", (e) => {
-    document.body.classList.toggle("dark-mode");
-    themeBtn.classList.toggle("btn-dark");
-    themeBtn.querySelector("i").classList.toggle("bi-moon-stars");
-    themeBtn.querySelector("i").classList.toggle("bi-sun");
-    document.querySelector(".logo").classList.toggle("btn-dark");
-    
-});
+document.querySelector('#year').textContent = new Date().getFullYear();
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));

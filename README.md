@@ -1,63 +1,50 @@
-# Portfolio - Build with Grid and flex
+# Abdul Najeeb Anwari Portfolio
 
-Welcome to my responsive portfolio website. I will try to improve its layout from time to time. 
+Personal portfolio for Abdul Najeeb Anwari, a full stack software engineer focused on enterprise systems, ERP platforms, healthcare software, and real-time web applications.
 
-## Table of contents
+## Live Site
 
-- [Overview](#overview)
-  - [Features](#features)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+[najeeb-anwari.github.io/portfolio](https://najeeb-anwari.github.io/portfolio)
 
-## Overview
+## Highlights
 
-### Features
+- Responsive portfolio layout for desktop and mobile
+- Selected ERP and real-time systems
+- Work experience timeline
+- Technical stack, education, and contact information
+- Downloadable CV
+- Accessible focus states, responsive navigation, and reduced-motion support
 
-Users should be able to:
+## Built With
 
-- View the optimal layout depending on their device's screen size
+- Semantic HTML5
+- Tailwind CSS compiled to a local static stylesheet
+- Custom CSS animations
+- Native JavaScript
+- Google Fonts
 
+No build step or extra modules required.
 
-### Links
+## GitHub Pages
 
-- Source Code: [GitHub URL](https://github.com/najeeb-anwari/portfolio)
-- Live Site URL: [Live View](https://najeeb-anwari.github.io/portfolio)
+This repository is configured as a static GitHub Pages site. To publish or update it:
 
-## My process
+1. Push changes to the `main` branch.
+2. Open **Settings → Pages** in the GitHub repository.
+3. Select **Deploy from a branch**.
+4. Choose `main` and `/ (root)`, then save.
 
-### Built with
+## Files
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [Bootstrap Icons](https://icons.getbootstrap.com/) - Icons library
+- `index.html`: portfolio page
+- `styles.css`: custom design tokens, layout details, and animations
+- `tailwind.css`: compiled utility stylesheet served locally
+- `tailwind.config.js` and `tailwind.input.css`: source files for regenerating `tailwind.css`
+- `scripts/app.js`: mobile navigation, year label, and scroll reveals
+- `Abdul Najeeb Anwari - CV.pdf`: current CV download
 
+## Contact
 
-### Continued development
-
-I will work continuesly to improve the layout of my portfolio and I will focus more on improving my UX/UI skills.
-
-
-### Useful resources
-
-- [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - This helped me for to review my CSS Grid Skills. I recommend this amazing post by CSS Trick. This is a complete guide for learning CSS Grid. Make sure to bookmark this page.
-- [Bootstrap Icons](https://icons.getbootstrap.com/) - This is an amazing website for icons.
-
-
-## Author
-
-- Website - [Website is under construction](https://www.najeeb-anwari.com)
-- LinkedIn - [@abdul-najeeb-anwari](https://www.linkedin.com/in/abdul-najeeb-anwari)
-- GitHub - [@najeeb-anwari](https://github.com/najeeb-anwari)
-- Twitter - [@najeeb_anwari](https://www.twitter.com/najeeb_anwari)
-
-## Acknowledgments
-
-Loads of thanks to my outstanding coach Annamaria Beno. Her advice helped me stay active and work more on my professional skills.
+- Email: [najeeb.anwari@gmail.com](mailto:najeeb.anwari@gmail.com)
+- LinkedIn: [abdul-najeeb-anwari](https://www.linkedin.com/in/abdul-najeeb-anwari/)
+- GitHub: [najeeb-anwari](https://github.com/najeeb-anwari)
